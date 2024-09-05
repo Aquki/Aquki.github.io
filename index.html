@@ -121,32 +121,6 @@
   </div>
 
   <div class="welcome-text">こんにちは、ㇾノ秋です。</div>
-  <script>
-    function requestAudioPermission() {
-      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ audio: true })
-          .then(stream => {
-            console.log('Audio permission granted.');
-            playAutoplaySounds();
-          })
-          .catch(error => {
-            console.error('Error accessing audio:', error);
-            alert('Audio permission denied.');
-          });
-      } else {
-        console.error('MediaDevices API not supported.');
-        alert('Your browser does not support audio input.');
-      }
-    }
-
-    function playAutoplaySounds() {
-      document.getElementById('welcomeMusic').play();
-      document.getElementById('mainMusic').play();
-      document.getElementById('screamAudio').play();
-    }
-
-    window.addEventListener('load', requestAudioPermission);
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
